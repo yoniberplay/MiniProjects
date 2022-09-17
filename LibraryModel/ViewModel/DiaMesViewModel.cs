@@ -11,6 +11,8 @@ namespace LibraryModel.ViewModel
 
         public int Dia { get; set; }
         public int Mes { get; set; }
+
+        
     }
    
 }

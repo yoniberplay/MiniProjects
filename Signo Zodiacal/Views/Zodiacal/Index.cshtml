@@ -2,9 +2,10 @@
 @model LibraryModel.ViewModel.DiaMesViewModel
 @{
     ViewData["Title"] = "Home";
+    var mensaje = (String)ViewData["message"];
 }
 
-
+<br/>
 <div class="row">
     <div class="col-md-12  placeholder-lg bg-primary text-white mb-5 br-12">
         <h1 style="text-align:center;" >Determine su signo Zodiacal.</h1>
@@ -12,7 +13,7 @@
 </div>
 
 <div class="h-100 d-flex align-items-center justify-content-center" >
-<form method="post" asp-controller="Zodiacal" asp-action="Resultado">
+<form method="post" asp-controller="Zodiacal" asp-action="Index">
 <table class="table">
   <thead>
     <tr>
@@ -35,11 +36,20 @@
     </tr>
     <tr>
         
-      <td colspan="2" style="text-align:center;"><button type="submit" class="btn btn-primary">Ver Signo</button></td>
+      <td colspan="2" style="text-align:center;">
+          <button type="submit" class="btn btn-primary">Ver Signo</button>
+          
+      </td>
     </tr>
   </tbody>
 </table>
 </form>
 </div>
+
+@if(mensaje != null)
+{
+    <h1 style="text-align:center; color:green;" >@mensaje</h1>
+}
+
 
 
