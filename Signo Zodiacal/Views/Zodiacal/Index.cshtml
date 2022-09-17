@@ -1,0 +1,32 @@
+﻿@*Strong Typed*@
+@model LibraryModel.ViewModel.DiaMesViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<div class="row">
+    <div class="col-md-12  placeholder-lg bg-primary text-white mb-5 br-12">
+        <h1>Determine su signo Zodiacal.</h1>
+    </div>
+</div>
+<h3>Introduzca el dia y su mes de nacimiento en valores numericos.</h3>
+<form method="post" asp-controller="Zodiacal" asp-action="Resultado">
+
+
+    <div class="mb-3">
+        <label asp-for="Dia" class="form-label">Dia de nacimiento: </label>
+        <input asp-for="Dia" class="form-control" type="number" min="1" max="31" required="required"/>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Mes" class="form-label">Mes de nacimiento: </label>
+        <input asp-for="Mes" class="form-control" type="number" min="1" max="12" required="required"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Ver Signo</button>
+</form>
+
+
+
+

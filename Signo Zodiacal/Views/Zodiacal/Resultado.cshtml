@@ -1,0 +1,12 @@
+﻿@{
+    var mensaje = (String)ViewData["message"];
+}
+
+<div class="row">
+    <div class="col-md-12  placeholder-lg bg-primary text-white mb-5 br-12">
+        <h1>Su signo Zodiacal es:  @mensaje </h1>
+    </div>
+</div>
+<form method="get" asp-controller="Zodiacal" asp-action="Index">
+    <button type="submit" class="btn btn-primary">Regresar</button>
+</form>
