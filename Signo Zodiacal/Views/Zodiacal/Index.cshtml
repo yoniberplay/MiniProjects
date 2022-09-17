@@ -7,26 +7,39 @@
 
 <div class="row">
     <div class="col-md-12  placeholder-lg bg-primary text-white mb-5 br-12">
-        <h1>Determine su signo Zodiacal.</h1>
-    </div>
+        <h1 style="text-align:center;" >Determine su signo Zodiacal.</h1>
+            </div>
 </div>
-<h3>Introduzca el dia y su mes de nacimiento en valores numericos.</h3>
+
+<div class="h-100 d-flex align-items-center justify-content-center" >
 <form method="post" asp-controller="Zodiacal" asp-action="Resultado">
-
-
-    <div class="mb-3">
-        <label asp-for="Dia" class="form-label">Dia de nacimiento: </label>
-        <input asp-for="Dia" class="form-control" type="number" min="1" max="31" required="required"/>
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="Mes" class="form-label">Mes de nacimiento: </label>
-        <input asp-for="Mes" class="form-control" type="number" min="1" max="12" required="required"/>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Ver Signo</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" colspan="2">
+    <h3 >Valores numericos.</h3>
+      </th>
+        
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr>
+      <th scope="row"><label asp-for="Dia" class="form-label">Dia de nacimiento: </label></th>
+      <td> <input asp-for="Dia" class="form-control" type="number" min="1" max="31" required="required"/></td>
+      
+    </tr>
+    <tr>
+      <th scope="row"> <label asp-for="Mes" class="form-label">Mes de nacimiento: </label></th>
+      <td><input asp-for="Mes" class="form-control" type="number" min="1" max="12" required="required"/></td>
+     
+    </tr>
+    <tr>
+        
+      <td colspan="2" style="text-align:center;"><button type="submit" class="btn btn-primary">Ver Signo</button></td>
+    </tr>
+  </tbody>
+</table>
 </form>
-
-
+</div>
 
 

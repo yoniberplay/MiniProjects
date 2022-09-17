@@ -3,10 +3,10 @@
 }
 
 <div class="row">
-    <div class="col-md-12  placeholder-lg bg-primary text-white mb-5 br-12">
-        <h1>Su signo Zodiacal es:  @mensaje </h1>
-    </div>
-</div>
-<form method="get" asp-controller="Zodiacal" asp-action="Index">
+    <div class="col-md-12  placeholder-lg mb-5 br-12">
+        <h1>Su signo Zodiacal es:  <p style="color:green;">@mensaje</p> </h1>
+        <form method="get" asp-controller="Zodiacal" asp-action="Index">
     <button type="submit" class="btn btn-primary">Regresar</button>
 </form>
+    </div>
+</div>
