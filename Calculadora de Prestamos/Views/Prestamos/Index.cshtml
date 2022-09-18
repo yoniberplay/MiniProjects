@@ -1,0 +1,77 @@
+﻿@*Strong Typed*@
+@model LibraryModel.ViewModel.PrestamosViewModel 
+@{
+    ViewData["Title"] = "Home";
+    var mensaje = (String)ViewData["message"];
+}
+
+<br/>
+<div class="p-3 mb-2 text-info text-white">
+    <h1 style="text-align:center;" class="text-primary">Calculadora de Prestamos</h1>
+    <h5 style="text-align:center;" class="text-info">COMPLETA LOS CAMPOS REQUERIDOS PARA VISUALIZAR LAS 
+        CUOTAS A PAGAR.</h5>
+</div>
+<div class="h-100 d-flex align-items-center justify-content-center" >
+<form method="post" asp-controller="Prestamos" asp-action="Index">
+<table class="table">
+
+  <tbody>
+    <tr>
+      <td >Monto del prestamo:</td>
+      <td><input asp-for="Monto" class="form-control" type="number" min="1" required="required"/></td>
+    </tr>
+      <tr>
+      <td>Tipo de prestamo:</td>
+      <td>
+  <select id="tipointeres" asp-for="Interes" class="form-select" name="Interes"  required>
+  <option value="22">Personal</option>
+  <option value="12">Automóvil</option>
+  <option value="8">Hipotecario</option>
+</select>
+      </td>
+    </tr>
+     <tr>
+      <td >Tasa de interes anual(%)</td>
+      <td >
+          <input class="form-control" type="text"  id="prue" readonly="readonly"/>
+      </td>
+    </tr>
+    <tr>
+      <td>Cantidad de cuotas mensuales:</td>
+      <td>
+  <select  asp-for="Cuotas" class="form-select" name="Cuotas"  required>
+  <option value="12">12</option>
+  <option value="18">18</option>
+  <option value="24">24</option>
+   <option value="30">30</option>
+    <option value="36">36</option>
+     <option value="42">42</option>
+     <option value="48">48</option>
+    <option value="54">54</option>
+    <option value="60">60</option>
+    <option value="66">66</option>
+    <option value="72">72</option>
+     <option value="78">78</option>
+      <option value="84">84</option>
+       <option value="90">90</option>
+       <option value="96">96</option>
+       <option value="102">102</option>
+       <option value="108">108</option>
+       <option value="114">114</option>
+       <option value="120">120</option>
+</select>
+      </td >
+    </tr>
+    <tr>
+           <td colspan="3" style="text-align:center;">
+          <button type="submit" style="color:white" class="btn btn-info btn-primary btn-lg">Calcular</button>
+      </td>
+      </tr>
+  </tbody>
+</table>
+</form>
+</div>
+@if(mensaje != null)
+{
+    <h2 style="text-align:center; color:green;" >@mensaje</h2>
+}

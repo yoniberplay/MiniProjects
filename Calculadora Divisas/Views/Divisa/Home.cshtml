@@ -1,0 +1,55 @@
+﻿@*Strong Typed*@
+@model LibraryModel.ViewModel.DivisaViewModel
+@{
+    ViewData["Title"] = "Home";
+    var mensaje = (String)ViewData["message"];
+}
+
+<br/>
+<div class="p-3 mb-2 bg-success text-white">
+    <h1 style="text-align:center;">Calculadora de divisas</h1>
+</div>
+<div class="h-100 d-flex align-items-center justify-content-center" >
+<form method="post" asp-controller="Divisa" asp-action="Home">
+<table class="table table-hover table-sm table-success">
+  <thead>
+    <tr>
+      <th scope="col">Importe</th>
+      <th scope="col">De:</th>
+      <th scope="col">a</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+          <input asp-for="Monto" class="form-control" type="number" min="1" required="required"/>
+          </td>
+      <td>
+          <select  asp-for="De" class="form-select" name="De"  required>
+  <option value="Dolar">Dolar</option>
+  <option value="Peso">Peso</option>
+  <option value="Euro">Euro</option>
+</select>
+      </td>
+      <td>
+         <select asp-for="A" class="form-select" name="A"  required>
+  <option value="Peso">Peso</option>
+  <option value="Dolar">Dolar</option>
+  <option value="Euro">Euro</option>
+  </select>
+      </td>
+          </tr>
+           <tr>
+           <td colspan="3" style="text-align:center;">
+          <button type="submit" class="btn btn-success">Convertir</button>
+      </td>
+      </tr>
+  </tbody>
+</table>
+</form>
+</div>
+@if(mensaje != null)
+{
+    <h2 style="text-align:center; color:green;" >@mensaje</h2>
+}
+<br/>

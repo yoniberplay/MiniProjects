@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Calculadora_Divisas</RootNamespace>
+    <RootNamespace>Calculadora_de_Prestamos</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
